@@ -1,0 +1,38 @@
+{% extends "./base.html" %}
+
+{% block title %} Edicion de servicios{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h1>Edicion de servicios Corporales</h1>
+        <div class="card">
+            <div class="card-body">
+                <form action="/EditarRegistroCorporal/{{registro.id}}" method="POST">{% csrf_token %}
+                    <div class="form-group pb-3">
+                        <input type="text"  name="txtnombreservicioCorporal"value="{{registro.id}}" class="form-control" placeholder="Nombre del servicio"  maxlength="100" required>
+                    </div>
+                    <div class="form-group pb-3">
+                        <input type="text"  name="txtdescripcionCorporal" value="{{registro.NombreServicio}}"class="form-control" placeholder="Descripcion del servicio"  maxlength="100" required>
+                    </div>
+                    <div class="form-group pb-3">
+                        <input type="text"  name="txtduracionCorporal"value="{{registro.Descripcion}}" class="form-control" placeholder="Duracion del servicio"  maxlength="100" required>
+                    </div>
+                    <div class="form-group pb-3">
+                        <input type="text"  name="txtprecioCorporal"value="{{registro.Precio}}" class="form-control" placeholder="Precio del servicio"  maxlength="100" required>
+                    </div>
+                    <div class="form-group pb-3">
+                        <input type="text"  name="txtZonaTratada"value ="{{registro.ZonaTratada}}" class="form-control" placeholder="Zona tratada"  maxlength="100" required>
+                    </div>
+                    <div class="form-group pb-3">
+                        <input type="text"  name="txtTipoProducto" value="{{registro.TipoProducto}}"class="form-control" placeholder="Tipo producto"  maxlength="100" required>
+                    </div>
+                    <div class="form-group pb-3">
+                        <button type="submit" class="btn btn-success btn-block text-white form-control">Guardar</button>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
